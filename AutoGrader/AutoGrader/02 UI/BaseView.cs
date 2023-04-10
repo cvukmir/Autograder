@@ -19,7 +19,7 @@ namespace AutoGrader
 
         private void _baseViewOpenInstructorFileButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void _baseViewOpenStudentFileButton_Click(object sender, EventArgs e)

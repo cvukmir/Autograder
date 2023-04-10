@@ -6,11 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Grader\" />
-    <Folder Include="Add-Ons\" />
+    <Compile Remove="Add-Ons\**" />
+    <EmbeddedResource Remove="Add-Ons\**" />
+    <None Remove="Add-Ons\**" />
   </ItemGroup>
 
   <ItemGroup>

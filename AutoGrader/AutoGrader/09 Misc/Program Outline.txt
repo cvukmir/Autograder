@@ -1,0 +1,33 @@
+﻿Process Steps:
+1.  Open .exe
+2.  UI opens
+3.  User has option to do the following from the UI:
+    a) Open a previous project (not required - would be nice)
+       - Grader tries to open instructor program
+       - Grader tries to open student program
+       - Grader tries to open report that was created from previous
+    b) Open a new instructor program
+       - Grader tries to open the instructor program
+       - Grader will prompt to open the student program
+       - Grader tries to open the student program
+    c) Open a new student program
+       - Grader tries to open the student program
+       - Grader will prompt to open the instructor program
+       - Grader tries to open the instructor program
+4.  UI will display directory tree starting from the root directory selected
+5.  User can select to compile the student and instructor programs (possibly seperately)
+6.  User can select to run/compare the student and instructor programs
+7.  UI shows a diff of the output.
+8.  UI shows the "grade" (can be percentage, num correct, etc. - Not really specified)
+9.  User can create a report from the diff showing the grade
+10. User has option to do the following:
+    a) Open a new project
+       - User requests to close either student program, instructor program, or both
+       - If any changes made, grader will ask to save
+       - UI will clear all diff/grade elements
+       - GOTO step 3
+    b) User closes the program
+       - User requests to close student program, instructor program, and diff elements.
+       - If any changes made, grader will ask to save
+11. UI cleans up any background objects
+12. Close this program
