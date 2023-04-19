@@ -13,8 +13,8 @@ namespace AutoGrader
         // Constuctor(s) //
         public FileHandler()
         {
-            _instructorDirectory = "";
-            _studentDirectory    = "";
+            _instructorDirectory = String.Empty;
+            _studentDirectory    = String.Empty;
         }
         
         // Public Properties //
