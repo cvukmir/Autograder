@@ -8,48 +8,10 @@ using System.Collections;
 
 namespace AutoGrader
 {
-    class FileHandler
+    static class FileHandler
     {
-        // Constuctor(s) //
-        public FileHandler()
-        {
-            _instructorDirectory = String.Empty;
-            _studentDirectory    = String.Empty;
-        }
-        
-        // Public Properties //
-
-        // Gets/sets the instructor directory
-        public string InstructorDirectory
-        {
-            get => _instructorDirectory;
-        }
-
-        // Gets/sets the student directory
-        public string StudentDirectory
-        {
-            get => _studentDirectory;
-        }
-
-        // Public Methods //
-        
-        public Dictionary<string, List<string>> getInstructorDirectory()
-        {
-            _instructorDirectory = getDirectory();
-
-            return getSubFolders(_instructorDirectory);
-        }
-
-        public Dictionary<string, List<string>> getStudentDirectory()
-        {
-            _studentDirectory = getDirectory();
-
-            return getSubFolders(_studentDirectory);
-        }
-
-        // Private Methods //
-
-        private string getDirectory()
+        // Public Methods - Static //
+        public static void getDirectory()
         {
             string directory = string.Empty;
 
@@ -64,10 +26,11 @@ namespace AutoGrader
                 }
             }
 
-            return directory;
+            getSubFolders(directory);
         }
 
-        private Dictionary<string, List<string>> getSubFolders(string currentDirectory)
+        // Private Methods - Static /
+        private static Dictionary<string, List<string>> getSubFolders(string currentDirectory)
         {
             Dictionary<string, List<string>> filesList = new Dictionary<string, List<string>>();
 
@@ -92,11 +55,5 @@ namespace AutoGrader
 
             return filesList;
         }
-
-
-        // Private Variables //
-
-        private string _instructorDirectory;
-        private string _studentDirectory;
     }
 }

@@ -16,20 +16,31 @@ namespace AutoGrader
         public BaseView()
         {
             InitializeComponent();
-            _fileHandler = new FileHandler();
         }
 
         private void _baseViewOpenInstructorFileButton_Click(object sender, EventArgs e)
         {
-            _fileHandler.getInstructorDirectory();
+            FileHandler.getDirectory();
         }
 
         private void _baseViewOpenStudentFileButton_Click(object sender, EventArgs e)
         {
-            _fileHandler.getStudentDirectory();
+            FileHandler.getDirectory();
         }
 
-        // Private Variables //
-        FileHandler _fileHandler;
+        private void runAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void runInstructorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void runStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
