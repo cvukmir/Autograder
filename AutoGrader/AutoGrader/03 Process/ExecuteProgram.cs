@@ -32,15 +32,14 @@ namespace AutoGrader
 
         // Private Methods - Static //
 
-        private static void compileCode()
+        public static string compileCode()
         {
-            
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
-            //startInfo.WorkingDirectory = "C:\\Users\\Chris\\Desktop";
+            startInfo.RedirectStandardError = true;
             startInfo.FileName = "C:\\Users\\Chris\\Desktop\\test.bat";
             //startInfo.Arguments = "";
             process.StartInfo = startInfo;
@@ -49,7 +48,8 @@ namespace AutoGrader
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
             process.WaitForExit();
-            
+
+            return output;
         }
 
         private static void runCode()

@@ -28,17 +28,17 @@ namespace AutoGrader
             FileHandler.getDirectory();
         }
 
-        private void runAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void _baseViewRunAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this._baseViewConsoleTextBox.AppendText(ExecuteProgram.compileCode());
+        }
+
+        private void _baseViewRunInstructorToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void runInstructorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void runStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void _baseViewRsunStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
