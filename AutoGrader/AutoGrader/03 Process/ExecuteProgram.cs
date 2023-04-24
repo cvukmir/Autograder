@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,15 +33,35 @@ namespace AutoGrader
 
         // Private Methods - Static //
 
-        public static string compileCode()
+        private static string createBatFile(string directory)
         {
+            if (Directory.GetFiles(directory).Contains("__exec_bat_file.bat"))
+            {
+                File.Delete(directory + "__exec_bat_file.bat");
+            }
+            
+            FileStream batFile = File.Create(directory + "__exec_bat_file.bat");
+
+            StreamWriter streamWriter = new StreamWriter(batFile);
+            streamWriter.Write("echo Hello World");
+            streamWriter.Flush();
+            streamWriter.Close();
+            batFile.Close();
+
+            return "";
+        }
+
+        private static string runCode()
+        {
+            createBatFile("C:\\Users\\Chris\\Desktop\\");
+
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.RedirectStandardError = true;
-            startInfo.FileName = "C:\\Users\\Chris\\Desktop\\test.bat";
+            startInfo.FileName = "C:\\Users\\Chris\\Desktop\\__exec_bat_file.bat";
             //startInfo.Arguments = "";
             process.StartInfo = startInfo;
             process.Start();
@@ -49,12 +70,9 @@ namespace AutoGrader
             string error = process.StandardError.ReadToEnd();
             process.WaitForExit();
 
+            File.Delete("C:\\Users\\Chris\\Desktop\\__exec_bat_file.bat");
+
             return output;
-        }
-
-        private static void runCode()
-        {
-
         }
 
         private static GradeInformation executeProgram_CPP(string directory)
@@ -92,7 +110,6 @@ namespace AutoGrader
 
             // Compile the code.
             logger.addLog("Compiling...");
-            compileCode();
 
             // Execute the code.
             logger.addLog("Executing...");

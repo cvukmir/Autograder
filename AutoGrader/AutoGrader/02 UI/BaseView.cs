@@ -30,7 +30,7 @@ namespace AutoGrader
 
         private void _baseViewRunAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this._baseViewConsoleTextBox.AppendText(ExecuteProgram.compileCode());
+            this._baseViewConsoleTextBox.AppendText(ExecuteProgram.executeAllPrograms());
         }
 
         private void _baseViewRunInstructorToolStripMenuItem_Click(object sender, EventArgs e)
