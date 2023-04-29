@@ -16,6 +16,7 @@ namespace AutoGrader
         public BaseView()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void _baseViewOpenInstructorFileButton_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace AutoGrader
 
         private void _baseViewRunAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this._baseViewConsoleTextBox.AppendText(ExecuteProgram.executeAllPrograms());
+            this._baseViewConsoleTextBox.AppendText(ExecuteProgram.executeAllPrograms("Selected directory").ToString());
         }
 
         private void _baseViewRunInstructorToolStripMenuItem_Click(object sender, EventArgs e)

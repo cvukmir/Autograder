@@ -19,6 +19,7 @@ namespace AutoGrader
 
         // Public Properties //
 
+
         // Gets the execution log
         public LinkedList<string> ExecutionLog
         {
@@ -35,7 +36,7 @@ namespace AutoGrader
         // Gets/sets the grade
         public double Grade
         {
-            get => (double)this.grade;
+            get => this.grade;
             set => this.grade = value;
         }
         

@@ -8,8 +8,8 @@ namespace AutoGrader
 {
     static class Constants
     {
-        public const double GRADE_NO_MAKEFILE = 0.0;
-        public const double GRADE_NO_MAINFILE = 0.0;
+        public const double GRADE_MAKEFILE = 10.0;
+        public const double GRADE_MAINFILE = 10.0;
 
     }
 }
