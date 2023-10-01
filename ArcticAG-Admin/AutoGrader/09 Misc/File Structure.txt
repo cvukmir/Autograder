@@ -1,0 +1,18 @@
+DIRECTORY STRUCTURE:
+
+This document goes over the directory structure of the assignment folder.
+
+Top level directory (any name):
+	-> This is where all assignments will be placed.
+	-> Must contain a generic file called "STUDENT_LOGINS" that must be manually created:
+		-> This file is in the form "<USERNAME> <PASSWORD>"
+			EX: user testPass
+
+In each assignment folder (name is name of the assignment):
+	-> Contains folders with the ID number of the students whom submitted an assignment.
+	-> Contains a folder called "INSTRUCTOR_FILES" which is automatically created when the assignment
+		is created that holds the grades for submitted files and the files for running the program by
+		the instructor (including a main file)
+
+In each student folder (name is username of the student):
+	-> Contains the uploaded files by the student, the batch file to build/run the program, and the executable of the program.
